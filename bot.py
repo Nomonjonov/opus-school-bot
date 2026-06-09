@@ -474,4 +474,4 @@ def run_server():
     HTTPServer(("0.0.0.0", 8080), Handler).serve_forever()
 
 threading.Thread(target=run_server, daemon=True).start()
-    bot.infinity_polling()
+bot.infinity_polling()
