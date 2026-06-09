@@ -173,7 +173,7 @@ def show_prices(message):
 @bot.message_handler(func=lambda m: m.text == "ℹ️ Ma'lumot")
 def info(message):
     bot.send_message(message.from_user.id,
-        "🏫 *Opus o'quv markazi*\n\nBizning markazda sifatli ta'lim beriladi.\nRo'yxatdan o'tish uchun '📝 Ro'yxatdan o'tish' tugmasini bosing.\n\n📞 Aloqa: @admin\\_username",,
+        "🏫 *Opus o'quv markazi*\n\nBizning markazda sifatli ta'lim beriladi.\nRo'yxatdan o'tish uchun '📝 Ro'yxatdan o'tish' tugmasini bosing.\n\n📞 Aloqa: @admin_username",,
         parse_mode="Markdown")
 
 @bot.message_handler(func=lambda m: m.text == "👥 O'quvchilar ro'yxati" and is_admin(m.from_user.id))
