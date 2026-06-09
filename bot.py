@@ -166,7 +166,7 @@ def show_prices(message):
         return
     text = "🏆 *Kurs narxlari:*\n\n"
     for c in courses:
-        price = f"{c['price']:,} so'm" if c['price'] else "Aniqlanmagan"
+        price = f"{c.get('price', 0) or 0:,} so'm" if c.get('price') else "Aniqlanmagan"
         text += f"📚 *{c['name']}* — {price}\n"
     bot.send_message(message.chat.id, text, parse_mode="Markdown")
 
