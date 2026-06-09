@@ -459,4 +459,19 @@ def export_excel(message):
 if __name__ == "__main__":
     db.init_db()
     logger.info("Bot ishga tushdi...")
+    import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Bot ishlayapti!")
+    def log_message(self, format, *args):
+        pass
+
+def run_server():
+    HTTPServer(("0.0.0.0", 8080), Handler).serve_forever()
+
+threading.Thread(target=run_server, daemon=True).start()
     bot.infinity_polling()
